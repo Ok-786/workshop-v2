@@ -85,7 +85,7 @@ export default function Map() {
             {console.log(Number(Math.random()) / 10)}
             <ReactMapGL {...viewport} width="100%" height="88vh" mapStyle='mapbox://styles/mapbox/streets-v11' style={{ color: 'red', lineColor: "green", }} onViewportChange={setViewport} mapboxApiAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ' mapboxAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ'>
                 {(selectedFilter === 'All' || selectedFilter === 'Clients') && clients.map((client) => (
-                    <Marker longitude={Number(client.longitude) + Number(Math.random() / 100)} latitude={Number(client.latitude) - Number(Math.random() / 100)} offsetLeft={-20} offsetTop={-10}>
+                    <Marker longitude={client.longitude} latitude={client.latitude} offsetLeft={-20} offsetTop={-10}>
                         <div style={{ borderRadius: '25px', padding: '6px' }} id='myDIV2' >
                             <HtmlTooltip
                                 title={
@@ -104,7 +104,7 @@ export default function Map() {
                 ))}
 
                 {(selectedFilter === 'All' || selectedFilter === 'Workers') && staffs.map((client) => (
-                    <Marker longitude={Number(client.longitude.toFixed(4))} latitude={Number(client.latitude.toFixed(4)) + Number(Math.random() / 100)} offsetLeft={-20} offsetTop={-10}>
+                    <Marker longitude={client.longitude.toFixed(4)} latitude={client.latitude.toFixed(4)} offsetLeft={-20} offsetTop={-10}>
                         <div style={{ borderRadius: '25px', padding: '6px' }} id='myDIV' >
                             <HtmlTooltip
                                 title={
