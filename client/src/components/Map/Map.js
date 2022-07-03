@@ -44,7 +44,7 @@ export default function Map() {
 
     React.useEffect(() => {
         async function callApi1() {
-            const response = await fetch('http://localhost:8000/api/auth/staff/', {
+            const response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 
@@ -56,7 +56,7 @@ export default function Map() {
         }
 
         async function callApi2() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 
@@ -92,12 +92,12 @@ export default function Map() {
                                     <React.Fragment>
                                         <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                             <h1>{client.firstName + " " + client.lastName}</h1>
-                                            <img id={`img${client.firstName}`} src={`http://localhost:8000/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
+                                            <img id={`img${client.firstName}`} src={`/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
                                         </div>
                                     </React.Fragment>
                                 }
                             >
-                                <Avatar onClick={() => { setType('Employee'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`http://localhost:8000/${client.image}`} sx={{ width: 56, height: 56 }} />
+                                <Avatar onClick={() => { setType('Employee'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`/${client.image}`} sx={{ width: 56, height: 56 }} />
                             </HtmlTooltip>
                         </div>
                     </Marker>
@@ -111,12 +111,12 @@ export default function Map() {
                                     <React.Fragment>
                                         <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                             <h1>{client.firstName + " " + client.lastName}</h1>
-                                            <img id={`img${client.firstName}`} src={`http://localhost:8000/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
+                                            <img id={`img${client.firstName}`} src={`/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
                                         </div>
                                     </React.Fragment>
                                 }
                             >
-                                <Avatar onClick={() => { setType('Client'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`http://localhost:8000/${client.image}`} sx={{ width: 56, height: 56 }} />
+                                <Avatar onClick={() => { setType('Client'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`/${client.image}`} sx={{ width: 56, height: 56 }} />
                             </HtmlTooltip>
                         </div>
                     </Marker>
@@ -149,7 +149,7 @@ export default function Map() {
                     <div className='bodyContainer'>
                         <div className="card-container">
                             <span className="pro">{type}</span>
-                            <img className="round" style={{ width: '120px' }} src={`http://localhost:8000/${c1.image}`} alt="user" />
+                            <img className="round" style={{ width: '120px' }} src={`/${c1.image}`} alt="user" />
                             <h3>{c1.firstName + " " + c1.lastName}</h3>
                             <h6>{c1.email}</h6>
                             <p>{c1.address} <br /> {c1.additionalDetails}</p>
