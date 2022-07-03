@@ -102,7 +102,7 @@ export default function Map() {
                         </div>
                     </Marker>
                 ))}
-
+                {/* aa */}
                 {(selectedFilter === 'All' || selectedFilter === 'Workers') && staffs.map((client) => (
                     <Marker longitude={client.longitude} latitude={client.latitude} offsetLeft={-20} offsetTop={-10}>
                         <div style={{ borderRadius: '25px', padding: '6px' }} id='myDIV' >
