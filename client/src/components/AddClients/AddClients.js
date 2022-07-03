@@ -79,7 +79,7 @@ export default function AddClients() {
 
                 var response;
                 try {
-                    response = await fetch('http://localhost:8000/api/auth/client/create', {
+                    response = await fetch('/api/auth/client/create', {
                         method: 'POST',
                         headers: { token: localStorage.token },
                         body: formData
@@ -109,8 +109,8 @@ export default function AddClients() {
     return (
         <form onSubmit={formik.handleSubmit}>
 
-            <Grid container spacing={2} style={{color:'rgb(88 123 206)'}}>
-                <Grid item xs={2} style={{justifyContent:'center', display:'flex', marginTop:'6vh'}}>
+            <Grid container spacing={2} style={{ color: 'rgb(88 123 206)' }}>
+                <Grid item xs={2} style={{ justifyContent: 'center', display: 'flex', marginTop: '6vh' }}>
                     <ImageUpload center id="file" name="file" onInput={setImage} rounded={true} errorText="Please provide an image." />
                 </Grid>
                 <Grid item xs={10}>
@@ -140,20 +140,20 @@ export default function AddClients() {
                         </Grid>
                     </div>
 
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <div className="d-flex justify-content-between align-items-center experience"><span><b>Edit Experience</b></span></div>
 
                     <Grid container>
-                        <Grid item xs={5} style={{ display: 'grid'}}>
+                        <Grid item xs={5} style={{ display: 'grid' }}>
                             <label className="labels" style={{ marginBlockStart: '15px', marginBlockEnd: '5px' }}>Experience</label><TextField name="experience" size="small" variant="outlined" type="text" className="form-control" placeholder="experience" value={formik.values.experience} onChange={formik.handleChange} />
                         </Grid>
                         <Grid item xs={5} style={{ display: 'grid', marginLeft: '10%' }}>
                             <label className="labels" style={{ marginBlockStart: '15px', marginBlockEnd: '5px' }}>Skills</label><TextField name="skills" size="small" variant="outlined" type="text" className="form-control" placeholder="skills" value={formik.values.skills} onChange={formik.handleChange} />
                         </Grid>
                     </Grid>
-                    <div style={{display:'grid'}}><label className="labels" style={{ marginBlockStart: '15px', marginBlockEnd: '5px' }}>Additional Details</label><TextField name="additionalDetails" multiline={true} rows={15} size="small" variant="outlined" type="text" className="form-control" placeholder="Enter additional details" value={formik.values.additionalDetails} onChange={formik.handleChange} /></div>
-                    <div className="mt-5 text-center"><Button fullWidth style={{color:'rgb(', marginTop: '1vh' }} color="primary" variant="contained" type="submit">Save Profile</Button></div>
+                    <div style={{ display: 'grid' }}><label className="labels" style={{ marginBlockStart: '15px', marginBlockEnd: '5px' }}>Additional Details</label><TextField name="additionalDetails" multiline={true} rows={15} size="small" variant="outlined" type="text" className="form-control" placeholder="Enter additional details" value={formik.values.additionalDetails} onChange={formik.handleChange} /></div>
+                    <div className="mt-5 text-center"><Button fullWidth style={{ color: 'rgb(', marginTop: '1vh' }} color="primary" variant="contained" type="submit">Save Profile</Button></div>
                 </Grid>
             </Grid>
         </form >

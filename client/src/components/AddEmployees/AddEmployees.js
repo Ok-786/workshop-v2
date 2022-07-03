@@ -79,7 +79,7 @@ export default function AddEmployees(props) {
 
                 var response;
                 try {
-                    response = await fetch('http://localhost:8000/api/auth/staff/create', {
+                    response = await fetch('/api/auth/staff/create', {
                         method: 'POST',
                         headers: { token: localStorage.token },
                         body: formData

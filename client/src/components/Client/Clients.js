@@ -30,7 +30,7 @@ export default function Clients() {
         console.log(row.disabled);
 
         try {
-            const response1 = await fetch('http://localhost:8000/api/auth/client/update', {
+            const response1 = await fetch('/api/auth/client/update', {
                 headers: {
                     'token': localStorage.token,
                     'id': row._id,
@@ -49,7 +49,7 @@ export default function Clients() {
     useEffect(() => {
         console.log('adsdadadadad')
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 
@@ -68,7 +68,7 @@ export default function Clients() {
         var parseRes;
         try {
             console.log('dsfsfsfsf')
-            const response = await fetch('http://localhost:8000/api/auth/client/delete', {
+            const response = await fetch('/api/auth/client/delete', {
                 headers: {
                     'token': localStorage.token,
                     'email': email
@@ -84,7 +84,7 @@ export default function Clients() {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 
@@ -115,7 +115,7 @@ export default function Clients() {
 
 
 
-    
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = (e) => {
         console.log('below here')
@@ -179,9 +179,9 @@ export default function Clients() {
                                 {/* <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell> */}
                                 <TableCell align="left" style={{ borderBottom: "none", color: 'gray' }}>
                                     {/* <IconButton>
-                                        <img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 30, height: 30, borderRadius: '50%' }} />
+                                        <img id={`img${row.image}`} src={`/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 30, height: 30, borderRadius: '50%' }} />
                                     </IconButton> */}
-                                    <i style={{ cursor: 'pointer' }} onClick={() => {handleOpen(row)}}>{row.firstName + " " + row.lastName}</i>
+                                    <i style={{ cursor: 'pointer' }} onClick={() => { handleOpen(row) }}>{row.firstName + " " + row.lastName}</i>
                                 </TableCell>
                                 {/* <TableCell align="left" style={{ borderBottom: "none" }}>{row.idNumber}</TableCell>
                                 <TableCell align="left" style={{ borderBottom: "none" }}>{row.operationalArea}</TableCell>

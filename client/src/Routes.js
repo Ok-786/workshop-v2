@@ -17,7 +17,7 @@ export default function Routes() {
 
     useEffect(() => {
         const fetchApi = async () => {
-            const response = await fetch('http://localhost:8000/api/auth/verify', {
+            const response = await fetch('/api/auth/verify', {
                 method: 'GET',
                 headers: { token: localStorage.token }
             });

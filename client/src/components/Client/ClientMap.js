@@ -57,7 +57,7 @@ export default function ClientMap() {
         // }
 
         async function callApi2() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 
@@ -83,7 +83,7 @@ export default function ClientMap() {
     return (
         <React.Fragment>
             {/* <Filter setSelectedFilter={setSelectedFilter} /> */}
-            <ReactMapGL {...viewport} width="100%" height="72vh" mapStyle='mapbox://styles/mapbox/streets-v11' style={{ border:'5px rgb(103,146,245,.8) solid', borderRadius:'15px',color: 'red', lineColor: "green", }} onViewportChange={setViewport} mapboxApiAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ' mapboxAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ'>
+            <ReactMapGL {...viewport} width="100%" height="72vh" mapStyle='mapbox://styles/mapbox/streets-v11' style={{ border: '5px rgb(103,146,245,.8) solid', borderRadius: '15px', color: 'red', lineColor: "green", }} onViewportChange={setViewport} mapboxApiAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ' mapboxAccessToken='pk.eyJ1Ijoib2stNzg2IiwiYSI6ImNrdHBsN2EzazAyNngzMWtndjE0ajF0YjMifQ.EH_h1lGgFsCHiaFK4uTSJQ'>
                 {/* {(selectedFilter === 'All' || selectedFilter === 'Clients') && clients.map((client) => (
                     <Marker longitude={Number(client.longitude.toFixed(1)) - 0.00001 + Number(Math.random().toFixed(1))} latitude={Number(client.latitude.toFixed(1)) - 0.00001 + Number(Math.random().toFixed(1))} offsetLeft={-20} offsetTop={-10}>
                         <div style={{ borderRadius: '25px', padding: '6px' }} id='myDIV2' >
@@ -111,12 +111,12 @@ export default function ClientMap() {
                                     <React.Fragment>
                                         <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                             <h1>{client.firstName + " " + client.lastName}</h1>
-                                            <img id={`img${client.firstName}`} src={`http://localhost:8000/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
+                                            <img id={`img${client.firstName}`} src={`/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
                                         </div>
                                     </React.Fragment>
                                 }
                             >
-                                <Avatar onClick={() => { setType('Client'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`http://localhost:8000/${client.image}`} sx={{ width: 56, height: 56 }} />
+                                <Avatar onClick={() => { setType('Client'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`/${client.image}`} sx={{ width: 56, height: 56 }} />
                             </HtmlTooltip>
                         </div>
                     </Marker>
@@ -149,7 +149,7 @@ export default function ClientMap() {
                     <div className='bodyContainer'>
                         <div className="card-container">
                             <span className="pro">{type}</span>
-                            <img className="round" style={{ width: '120px' }} src={`http://localhost:8000/${c1.image}`} alt="user" />
+                            <img className="round" style={{ width: '120px' }} src={`/${c1.image}`} alt="user" />
                             <h3>{c1.firstName + " " + c1.lastName}</h3>
                             <h6>{c1.email}</h6>
                             <p>{c1.address} <br /> {c1.additionalDetails}</p>

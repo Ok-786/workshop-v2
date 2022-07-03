@@ -18,7 +18,7 @@ export default function Calander1() {
 
     useEffect(() => {
         async function callApi1() {
-            const response = await fetch('http://localhost:8000/api/auth/event/', {
+            const response = await fetch('/api/auth/event/', {
                 headers: { token: localStorage.token }
             });
 
@@ -61,7 +61,7 @@ export default function Calander1() {
 
     const event = ({ event }) => {
         return (
-            <div style={{background:'#6792ef', border:'none'}}>
+            <div style={{ background: '#6792ef', border: 'none' }}>
                 {event.name} <br /> <small>{event.description}</small>{" "}
             </div>
         );

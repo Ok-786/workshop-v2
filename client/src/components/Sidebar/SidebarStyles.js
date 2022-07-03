@@ -6,10 +6,10 @@ const SigninStyles = makeStyles(theme => ({
         display: 'flex',
     },
     test: {
-        zIndex: theme.zIndex.drawer +3,
+        zIndex: theme.zIndex.drawer + 3,
         backgroundColor: 'rgb(255,255,255)',
-        marginBlockEnd:'900vh',
-        position:'fixed'
+        marginBlockEnd: '900vh',
+        position: 'fixed'
     },
     appBar: {
         zIndex: theme.zIndex.drawer - 1,
@@ -68,7 +68,7 @@ const SigninStyles = makeStyles(theme => ({
         paddingInlineStart: '15px',
         backgroundColor: '#6792ef',
         width: drawerWidth,
-        paddingBlock:'11.5px',
+        paddingBlock: '11.5px',
         color: 'white',
         // justifyContent: 'flex-end',
         // padding: theme.spacing(0, 1),
@@ -81,7 +81,7 @@ const SigninStyles = makeStyles(theme => ({
         paddingInlineStart: '15px',
         backgroundColor: '#6792ef',
         width: '73px',
-        paddingBlock:'11.5px',
+        paddingBlock: '11.5px',
         color: 'white',
         // justifyContent: 'flex-end',
         // padding: theme.spacing(0, 1),
@@ -105,12 +105,12 @@ const SigninStyles = makeStyles(theme => ({
         padding: theme.spacing(0, 1),
     },
     drawerContent: {
-        
+
         marginLeft: '10px',
         marginBlockStart: '25vh',
     },
     marginIcon: {
-        marginBlockStart:'-1.5vh',
+        marginBlockStart: '-1.5vh',
     },
     content: {
         flexGrow: 1,
