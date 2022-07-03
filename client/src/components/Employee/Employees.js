@@ -104,7 +104,7 @@ export default function Employees() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/staff/', {
+            const response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 
@@ -124,7 +124,7 @@ export default function Employees() {
 
         // handleClose();
         try {
-            const response1 = await fetch('http://localhost:8000/api/auth/staff/update', {
+            const response1 = await fetch('/api/auth/staff/update', {
                 headers: {
                     'token': localStorage.token,
                     firstName: employee.firstName,
@@ -157,7 +157,7 @@ export default function Employees() {
         console.log('enddd')
         var response;
         async function callApi() {
-            response = await fetch('http://localhost:8000/api/auth/staff/', {
+            response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 
@@ -190,7 +190,7 @@ export default function Employees() {
     const deleteHandler = async (email) => {
         try {
             console.log('dsfsfsfsf')
-            const response = await fetch('http://localhost:8000/api/auth/staff/delete', {
+            const response = await fetch('/api/auth/staff/delete', {
                 headers: {
                     'token': localStorage.token,
                     'email': email
@@ -204,7 +204,7 @@ export default function Employees() {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/staff/', {
+            const response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 
@@ -281,7 +281,7 @@ export default function Employees() {
                                 {(state === 'All') &&
                                     <TableRow key={row.firstName} style={{ color: '#80a4f1' }}>
                                         <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell>
-                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.firstName + " " + row.lastName}</TableCell>
+                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.firstName + " " + row.lastName}</TableCell>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
                                                 {row.phoneNumber}<br></br>
@@ -336,7 +336,7 @@ export default function Employees() {
                                 {(state === row.designation) &&
                                     <TableRow key={row.firstName} style={{ color: '#80a4f1' }}>
                                         <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell>
-                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.firstName + " " + row.lastName}</TableCell>
+                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.firstName + " " + row.lastName}</TableCell>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
                                                 {row.phoneNumber}<br></br>

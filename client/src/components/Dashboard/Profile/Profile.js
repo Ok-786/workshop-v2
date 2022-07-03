@@ -17,7 +17,7 @@ export default function Profile() {
     useEffect(() => {
         var parseResStaff;
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/admin/', {
+            const response = await fetch('/api/auth/admin/', {
                 headers: { token: localStorage.token }
             });
 
@@ -27,7 +27,7 @@ export default function Profile() {
 
         }
         async function callApi1() {
-            const response = await fetch('http://localhost:8000/api/auth/staff/', {
+            const response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 
@@ -38,7 +38,7 @@ export default function Profile() {
 
         }
         async function callApi2() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 

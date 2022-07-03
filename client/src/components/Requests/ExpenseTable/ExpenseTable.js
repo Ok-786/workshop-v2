@@ -50,7 +50,7 @@ export default function ExpenseTable(props) {
     async function callApi() {
         var response1;
         try {
-            response1 = await fetch('http://localhost:8000/api/auth/expense/update', {
+            response1 = await fetch('/api/auth/expense/update', {
                 headers: {
                     'token': localStorage.token,
                     name: props.expense.name,
@@ -74,7 +74,7 @@ export default function ExpenseTable(props) {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/expense/', {
+            const response = await fetch('/api/auth/expense/', {
                 headers: { token: localStorage.token }
             });
 
@@ -88,7 +88,7 @@ export default function ExpenseTable(props) {
         handleClose();
 
         // async function callApi2() {
-        //     const response = await fetch('http://localhost:8000/api/auth/expense/', {
+        //     const response = await fetch('/api/auth/expense/', {
         //         headers: { token: localStorage.token }
         //     });
 
@@ -120,7 +120,7 @@ export default function ExpenseTable(props) {
     const deleteHandler = async (name) => {
         try {
             console.log('dsfsfsfsf')
-            const response = await fetch('http://localhost:8000/api/auth/expense/delete', {
+            const response = await fetch('/api/auth/expense/delete', {
                 headers: {
                     'token': localStorage.token,
                     'name': name
@@ -136,7 +136,7 @@ export default function ExpenseTable(props) {
             }
 
             async function callApi() {
-                const response = await fetch('http://localhost:8000/api/auth/expense/', {
+                const response = await fetch('/api/auth/expense/', {
                     headers: { token: localStorage.token }
                 });
 
@@ -159,7 +159,7 @@ export default function ExpenseTable(props) {
             <span onClick={handleOpen}>
                 {props.component}
             </span>
-            <TableContainer  style={{ border: '0px solid', marginTop: '100px', borderBottom: "none" }} >
+            <TableContainer style={{ border: '0px solid', marginTop: '100px', borderBottom: "none" }} >
                 <Table className={classes1.table} aria-label="simple table" style={{ width: '100%', border: 'none', borderBottom: "none" }} >
                     <TableHead style={{ background: '#fafafa', border: '0px ', borderBottom: "none" }}>
                         <TableRow style={{ borderBottom: "none" }}>
@@ -178,8 +178,8 @@ export default function ExpenseTable(props) {
                         {props.rows.map((row, index) => (
                             <TableRow key={row.id} id={row.id} style={{ borderBottom: "none" }}>
                                 {/* <TableCell style={{ borderBottom: "none" }} component="th" width="1%" align="left" scope="row"> */}
-                                    {/* <img id={`img${row.firstName}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60 }} /> */}
-                                    {/* <img id={`img${row.name}`} src={Image} alt={`pic of ${row.name}`} style={{ width: 60, borderRadius: "50%" }} /> */}
+                                {/* <img id={`img${row.firstName}`} src={`/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60 }} /> */}
+                                {/* <img id={`img${row.name}`} src={Image} alt={`pic of ${row.name}`} style={{ width: 60, borderRadius: "50%" }} /> */}
                                 {/* </TableCell> */}
                                 {/* <TableCell width="10%" style={{ color: 'blue' }} component="th" scope="row" id={`id${row.id}`}>{index}</TableCell> */}
                                 <TableCell width="5%" style={{ color: 'blue', borderBottom: "none" }} align="left" id={`fn${row.id}`}>{row.name}</TableCell>

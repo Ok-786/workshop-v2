@@ -15,12 +15,12 @@ import ProgressBar from '../Progressbar/ProgressBar';
 
 export default function TimeOffTable(props) {
     const classes = TimeOffTableStyles();
-    
+
     // var history = useHistory();
 
     return (
         <div className={classes.widgetlg}>
-            <TableContainer  style={{ border: '0px solid', marginTop: '100px', borderBottom: "none" }} >
+            <TableContainer style={{ border: '0px solid', marginTop: '100px', borderBottom: "none" }} >
                 <Table className={classes.table} aria-label="simple table" style={{ width: '100%', border: 'none', borderBottom: "none" }} >
                     <TableHead style={{ background: '#fafafa', border: '0px ', borderBottom: "none" }}>
                         <TableRow style={{ borderBottom: "none" }}>
@@ -37,17 +37,17 @@ export default function TimeOffTable(props) {
                         {props.rows.map((row, index) => (
                             <TableRow key={row.id} id={row.id} style={{ borderBottom: "none" }}>
                                 <TableCell style={{ borderBottom: "none" }} component="th" width="1%" align="left" scope="row">
-                                    {/* <img id={`img${row.firstName}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60 }} /> */}
-                                    <img id={`img${row.firstName}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60, height:60, borderRadius: "50%" }} />
+                                    {/* <img id={`img${row.firstName}`} src={`/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60 }} /> */}
+                                    <img id={`img${row.firstName}`} src={`/${row.image}`} alt={`pic of ${row.firstName}`} style={{ width: 60, height: 60, borderRadius: "50%" }} />
                                 </TableCell>
                                 {/* <TableCell width="10%" style={{ color: 'blue' }} component="th" scope="row" id={`id${row.id}`}>{index}</TableCell> */}
-                                <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}>{row.firstName+" "+row.lastName}</TableCell>
+                                <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}>{row.firstName + " " + row.lastName}</TableCell>
                                 <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}>{row.timeoffLeaves}</TableCell>
                                 <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}>{row.timeoffDescription}</TableCell>
                                 {/* <TableCell width="1%" style={{ borderBottom: "none", color: 'blue', }} align="left" id={`fn${row.id}`}>{row.status}</TableCell> */}
-                                <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}><ProgressBar progress={row.timeoffCompleted}/></TableCell>
+                                <TableCell width="10%" style={{ borderBottom: "none" }} align="left" id={`fn${row.id}`}><ProgressBar progress={row.timeoffCompleted} /></TableCell>
                                 {/* <TableCell width="1%" align="right" ><img id={`img${row.id}`} src={row.imageURL} alt={`profile pic of ${row.firstName}`} style={{ width: 60 }} /></TableCell> */}
-                                
+
                                 {/* <TableCell><IconButton onClick={()=>props.editTask(index)}><Edit/></IconButton></TableCell> */}
                             </TableRow >
                         ))}

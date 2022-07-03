@@ -23,7 +23,7 @@ export default function Shop() {
     const [data, setData] = useState([]);
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/',{
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -54,7 +54,7 @@ export default function Shop() {
 
     return (
         <Paper>
-            
+
             <SearchBar
                 value={searched}
                 onChange={(searchVal) => requestSearch(searchVal)}
@@ -75,7 +75,7 @@ export default function Shop() {
                         {rows.map((row) => (
                             <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">
-                                    <img id={`img${row.name}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 60, height:60 , borderRadius: '50%' }}  />
+                                    <img id={`img${row.name}`} src={`/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 60, height: 60, borderRadius: '50%' }} />
                                 </TableCell>
                                 <TableCell align="left">{row.name}</TableCell>
                                 <TableCell align="left">{row.quantity}</TableCell>

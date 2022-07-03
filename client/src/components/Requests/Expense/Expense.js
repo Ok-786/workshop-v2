@@ -38,7 +38,7 @@ export default function Expense() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/expense/', {
+            const response = await fetch('/api/auth/expense/', {
                 headers: { token: localStorage.token }
             });
 

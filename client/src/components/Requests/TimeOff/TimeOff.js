@@ -16,7 +16,7 @@ export default function TimeOff() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/staff/', {
+            const response = await fetch('/api/auth/staff/', {
                 headers: { token: localStorage.token }
             });
 

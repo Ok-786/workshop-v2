@@ -107,7 +107,7 @@ export default function ManageOrders() {
     useEffect(() => {
         var parseRes = [];
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/orders/', {
+            const response = await fetch('/api/auth/orders/', {
                 headers: { token: localStorage.token }
             });
 
@@ -141,7 +141,7 @@ export default function ManageOrders() {
     //     try {
 
     //         console.log(orders)
-    //         const response1 = await fetch('http://localhost:8000/api/auth/client/update', {
+    //         const response1 = await fetch('/api/auth/client/update', {
     //             headers: {
     //                 'token': localStorage.token,
     //                 name: employee.name,
@@ -168,7 +168,7 @@ export default function ManageOrders() {
     //     console.log('enddd')
     //     var response;
     //     async function callApi() {
-    //         const response = await fetch('http://localhost:8000/api/auth/client/', {
+    //         const response = await fetch('/api/auth/client/', {
     //             headers: { token: localStorage.token }
     //         });
 
@@ -260,7 +260,7 @@ export default function ManageOrders() {
                                     <TableRow key={row.client_id.firstName} style={{ color: '#80a4f1' }}>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
-                                                {/* <img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /> */}
+                                                {/* <img id={`img${row.image}`} src={`/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /> */}
                                                 <div style={{ color: 'darkgray' }}>{row.client_id.firstName + ' ' + row.client_id.lastName}</div>
                                             </div>
                                         </TableCell>
@@ -280,7 +280,7 @@ export default function ManageOrders() {
                                     <TableRow key={row.client_id.firstName} style={{ color: '#80a4f1' }}>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
-                                                {/* <img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /> */}
+                                                {/* <img id={`img${row.image}`} src={`/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /> */}
                                                 <div style={{ color: 'darkgray' }}>{row.client_id.firstName + ' ' + row.client_id.lastName}</div>
                                             </div>
                                         </TableCell>

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 export default function AddExpense(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-    
+
 
     const handleOpen = () => {
         setOpen(true);
@@ -38,7 +38,7 @@ export default function AddExpense(props) {
     async function callApi() {
         var response;
         try {
-            response = await fetch('http://localhost:8000/api/auth/expense/create', {
+            response = await fetch('/api/auth/expense/create', {
                 method: 'POST',
                 headers: { expense: JSON.stringify(props.expense), token: localStorage.token }
             });
@@ -54,7 +54,7 @@ export default function AddExpense(props) {
         }
 
         async function callApi2() {
-            const response = await fetch('http://localhost:8000/api/auth/expense/', {
+            const response = await fetch('/api/auth/expense/', {
                 headers: { token: localStorage.token }
             });
 
@@ -168,12 +168,12 @@ export default function AddExpense(props) {
                                 />
                                 {/* </div> */}
                             </Grid>
-                            <div style={{ display:'relative', marginLeft: '40%', marginTop: '20px', width: '100%' }}>
-                            <Button variant='contained' style={{ backgroundColor: 'rgb(32 60 130)', color: 'white' }} onClick={callApi}>Add Expense</Button>
-                            <Button variant='contained' style={{ marginLeft: '10px', backgroundColor: 'rgb(32 60 130)', color: 'white' }} onClick={handleClose}>Cancel</Button>
-                        </div>
+                            <div style={{ display: 'relative', marginLeft: '40%', marginTop: '20px', width: '100%' }}>
+                                <Button variant='contained' style={{ backgroundColor: 'rgb(32 60 130)', color: 'white' }} onClick={callApi}>Add Expense</Button>
+                                <Button variant='contained' style={{ marginLeft: '10px', backgroundColor: 'rgb(32 60 130)', color: 'white' }} onClick={handleClose}>Cancel</Button>
+                            </div>
                         </Grid>
-                        
+
                     </div>
                 </Fade>
             </Modal>

@@ -103,7 +103,7 @@ export default function AddProduct() {
                 // setIsLoading(true);
                 var response;
                 try {
-                    response = await fetch('http://localhost:8000/api/auth/products/create', {
+                    response = await fetch('/api/auth/products/create', {
                         method: 'POST',
                         headers: { token: localStorage.token },
                         body: formData
@@ -136,7 +136,7 @@ export default function AddProduct() {
     return (
         <div className="p-3 py-5">
             <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop:'35px' }}>Product Info</h5>
+                <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop: '35px' }}>Product Info</h5>
             </div>
             <form onSubmit={formik.handleSubmit}>
                 <Grid rowSpacing={1} container>
@@ -257,7 +257,7 @@ export default function AddProduct() {
                     </Grid>
                 </Grid>
                 <div className="d-flex justify-content-between align-items-center mt-4">
-                    <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop:'35px' }}>Product Pricing</h5>
+                    <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop: '35px' }}>Product Pricing</h5>
                 </div>
                 <Grid rowSpacing={1} container>
                     <Grid item xs={6} style={{ display: 'grid' }}>
@@ -300,7 +300,7 @@ export default function AddProduct() {
                     </Grid>
                 </Grid>
                 <div className="d-flex justify-content-between align-items-center mb-3">
-                    <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop:'35px' }}>Additional Details</h5>
+                    <h5 className="text-right" style={{ color: 'rgb(88 123 206)', marginTop: '35px' }}>Additional Details</h5>
                 </div>
                 <Grid rowSpacing={1} container>
                     <Grid item xs={6} style={{ display: 'grid' }}>

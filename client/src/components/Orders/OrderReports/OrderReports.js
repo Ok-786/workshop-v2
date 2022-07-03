@@ -1,6 +1,6 @@
 import { Grid, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react'
-import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip,  } from 'recharts';
+import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, } from 'recharts';
 
 export default function OrderReports() {
     const [orders, setOrders] = useState([]);
@@ -10,7 +10,7 @@ export default function OrderReports() {
     useEffect(() => {
         var parseRes = [];
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/client/', {
+            const response = await fetch('/api/auth/client/', {
                 headers: { token: localStorage.token }
             });
 
@@ -63,7 +63,7 @@ export default function OrderReports() {
         }
         callApi()
     }, [])
-    
+
 
     const COLORS = ['#6792ef', '#203c82', '#519cff'];
 
@@ -90,7 +90,7 @@ export default function OrderReports() {
                 </PieChart>
             </ResponsiveContainer>
 
-            <div style={{ paddingInline: '10%', marginTop: '8%', border:'1px dotted lightgray ', paddingBlock:'5%' }}>
+            <div style={{ paddingInline: '10%', marginTop: '8%', border: '1px dotted lightgray ', paddingBlock: '5%' }}>
                 <Grid container>
                     <Grid align="center" item xs={4}>
                         <Typography variant='h5'>
@@ -110,7 +110,7 @@ export default function OrderReports() {
                     </Grid>
 
                 </Grid>
-                <Grid container style={{color:'blue'}}>
+                <Grid container style={{ color: 'blue' }}>
                     <Grid align="center" item xs={4}>
                         <Typography variant='h5'>
                             {c1[0]}

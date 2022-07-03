@@ -51,7 +51,7 @@ export default function CompanyDetails() {
         console.log(event)
         var response;
         try {
-            response = await fetch('http://localhost:8000/api/auth/event/create', {
+            response = await fetch('/api/auth/event/create', {
                 method: 'POST',
                 headers: { event: JSON.stringify(event), token: localStorage.token }
             });
@@ -66,7 +66,7 @@ export default function CompanyDetails() {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/event/', {
+            const response = await fetch('/api/auth/event/', {
                 headers: { token: localStorage.token }
             });
 
@@ -89,7 +89,7 @@ export default function CompanyDetails() {
     useEffect(() => {
         console.log('adsdadadadad')
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/event/', {
+            const response = await fetch('/api/auth/event/', {
                 headers: { token: localStorage.token }
             });
 
@@ -147,7 +147,7 @@ export default function CompanyDetails() {
                                 {/* <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell> */}
                                 <TableCell align="left" style={{ borderBottom: "none", color: 'darkgray' }}>
                                     {/* <IconButton>
-                                        <img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 30, height: 30, borderRadius: '50%' }} />
+                                        <img id={`img${row.image}`} src={`/${row.image}`} alt={`pic of ${row.image}`} style={{ width: 30, height: 30, borderRadius: '50%' }} />
                                     </IconButton> */}
                                     {row.name}
                                 </TableCell>

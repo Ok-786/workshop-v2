@@ -80,7 +80,7 @@ export default function Multitabs() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/admin/', {
+            const response = await fetch('/api/auth/admin/', {
                 headers: { token: localStorage.token }
             });
             const parseRes = await response.json();
@@ -97,7 +97,7 @@ export default function Multitabs() {
         // e.preventDefault()
         // handleClose();
         try {
-            const response1 = await fetch('http://localhost:8000/api/auth/admin/update', {
+            const response1 = await fetch('/api/auth/admin/update', {
                 headers: {
                     'token': localStorage.token,
                     name: admin.name,
@@ -127,7 +127,7 @@ export default function Multitabs() {
 
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/admin/', {
+            const response = await fetch('/api/auth/admin/', {
                 headers: { token: localStorage.token }
             });
             const parseRes = await response.json();
@@ -167,10 +167,10 @@ export default function Multitabs() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0} >
-                <Personal admin={admin} handleChange={handleSetAdmin} submitHandler={updateHandler}/>
+                <Personal admin={admin} handleChange={handleSetAdmin} submitHandler={updateHandler} />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <Work admin={admin} handleChange={handleSetAdmin} submitHandler={updateHandler}/>
+                <Work admin={admin} handleChange={handleSetAdmin} submitHandler={updateHandler} />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <Contract admin={admin} handleChange={handleSetAdmin} />

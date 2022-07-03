@@ -17,7 +17,7 @@ const RenderLineChart = (props) => {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/', {
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -80,7 +80,7 @@ const RenderLineChart = (props) => {
                 // }
             }
             console.log('ooooooooooooooooooooooooooooo')
-            console.log(c,p,ip)
+            console.log(c, p, ip)
             var obj
             if (props.state === 'All') {
                 obj = [
@@ -140,7 +140,7 @@ const RenderLineChart = (props) => {
                     },
                 ]
             }
-             setRows(obj);
+            setRows(obj);
             // setData(parseRes.products);
 
         }
@@ -170,7 +170,7 @@ export default function InventoryReports() {
     const [rows, setRows] = useState([]);
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/', {
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -190,7 +190,7 @@ export default function InventoryReports() {
     return (
         <div>
             <Featuredinfo metaData={metaExpense} rows={rows} />
-            <div style={{marginTop:'13%'}}></div>
+            <div style={{ marginTop: '13%' }}></div>
             <RenderLineChart state="All" />
         </div>
     )

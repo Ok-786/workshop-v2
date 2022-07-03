@@ -20,7 +20,7 @@ const RenderLineChart = (props) => {
     const [client, setClient] = useState([]);
     useEffect(() => {
         // async function callApi() {
-        //     const response = await fetch('http://localhost:8000/api/auth/tasks/', {
+        //     const response = await fetch('/api/auth/tasks/', {
         //         headers: { token: localStorage.token },
         //     });
 
@@ -40,7 +40,7 @@ const RenderLineChart = (props) => {
         // callApi();
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/tasks/', {
+            const response = await fetch('/api/auth/tasks/', {
                 headers: { token: localStorage.token },
             });
 
@@ -178,7 +178,7 @@ export default function Reports() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/tasks/', {
+            const response = await fetch('/api/auth/tasks/', {
                 headers: { token: localStorage.token },
             });
 
@@ -200,7 +200,7 @@ export default function Reports() {
         console.log(row);
 
         try {
-            const response1 = await fetch('http://localhost:8000/api/auth/task/update', {
+            const response1 = await fetch('/api/auth/task/update', {
                 headers: {
                     'token': localStorage.token,
                     'id': row._id,
@@ -214,7 +214,7 @@ export default function Reports() {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/tasks/', {
+            const response = await fetch('/api/auth/tasks/', {
                 headers: { token: localStorage.token },
             });
 

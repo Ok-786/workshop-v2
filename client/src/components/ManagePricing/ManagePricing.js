@@ -103,7 +103,7 @@ export default function ManagePricing() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/', {
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -123,7 +123,7 @@ export default function ManagePricing() {
 
         // handleClose();
         try {
-            const response1 = await fetch('http://localhost:8000/api/auth/products/update', {
+            const response1 = await fetch('/api/auth/products/update', {
                 headers: {
                     'token': localStorage.token,
                     name: employee.name,
@@ -151,7 +151,7 @@ export default function ManagePricing() {
         console.log('enddd')
         var response;
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/', {
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -185,7 +185,7 @@ export default function ManagePricing() {
         console.log(id)
         try {
             console.log('dsfsfsfsf')
-            const response = await fetch('http://localhost:8000/api/auth/products/delete', {
+            const response = await fetch('/api/auth/products/delete', {
                 headers: {
                     'token': localStorage.token,
                     'id': id
@@ -199,7 +199,7 @@ export default function ManagePricing() {
         }
 
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/products/', {
+            const response = await fetch('/api/auth/products/', {
                 headers: { token: localStorage.token }
             });
 
@@ -277,7 +277,7 @@ export default function ManagePricing() {
                                 {(state === 'All') &&
                                     <TableRow key={row.firstName} style={{ color: '#80a4f1' }}>
                                         {/* <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell> */}
-                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.name}</TableCell>
+                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.name}</TableCell>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
                                                 {row.brand}<br></br>
@@ -333,7 +333,7 @@ export default function ManagePricing() {
                                 {(state === row.brand) &&
                                     <TableRow key={row.firstName} style={{ color: '#80a4f1' }}>
                                         {/* <TableCell style={{ borderBottom: "none" }} component="th" scope="row">{index}</TableCell> */}
-                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`http://localhost:8000/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.name}</TableCell>
+                                        <TableCell align="left" style={{ color: '#80a7e0', borderBottom: "none" }}> <IconButton><img id={`img${row.image}`} src={`/${row.image}`} alt={`${row.name}`} style={{ width: 50, height: 50, borderRadius: '50%' }} /></IconButton>{row.name}</TableCell>
                                         <TableCell align="left" style={{ borderBottom: "none" }}>
                                             <div >
                                                 {row.brand}<br></br>

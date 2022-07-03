@@ -39,7 +39,7 @@ export default function TaskList() {
 
     useEffect(() => {
         async function callApi() {
-            const response = await fetch('http://localhost:8000/api/auth/tasks/', {
+            const response = await fetch('/api/auth/tasks/', {
                 headers: { token: localStorage.token },
             });
 

@@ -45,7 +45,7 @@ export default function ClientMap() {
     React.useEffect(() => {
         setSelectedFilter('All');
         // async function callApi1() {
-        //     const response = await fetch('http://localhost:8000/api/auth/staff/', {
+        //     const response = await fetch('/api/auth/staff/', {
         //         headers: { token: localStorage.token }
         //     });
 
@@ -92,12 +92,12 @@ export default function ClientMap() {
                                     <React.Fragment>
                                         <div style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                                             <h1>{client.firstName + " " + client.lastName}</h1>
-                                            <img id={`img${client.firstName}`} src={`http://localhost:8000/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
+                                            <img id={`img${client.firstName}`} src={`/${client.image}`} alt={`pic of ${client.image}`} style={{ width: 120, height: 120 }} />
                                         </div>
                                     </React.Fragment>
                                 }
                             >
-                                <Avatar onClick={() => { setType('Employee'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`http://localhost:8000/${client.image}`} sx={{ width: 56, height: 56 }} />
+                                <Avatar onClick={() => { setType('Employee'); handleOpen(client) }} style={{ cursor: 'pointer' }} alt="Remy Sharp" src={`/${client.image}`} sx={{ width: 56, height: 56 }} />
                             </HtmlTooltip>
                         </div>
                     </Marker>
