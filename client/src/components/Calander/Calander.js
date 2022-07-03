@@ -76,7 +76,7 @@ export default function Calander1() {
                     events={events}
                     step={60}
                     showMultiDayTimes
-                    defaultDate={new Date(2022, 3, 1)}
+                    defaultDate={new Date()}
                     style={{ minHeight: 600 }}
                     components={{
                         event: event
