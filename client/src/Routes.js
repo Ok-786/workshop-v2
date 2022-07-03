@@ -43,9 +43,9 @@ export default function Routes() {
         <SigninContext.Provider value={[isLoggedin, setIsLoggedin]}>
             <Router>
                 <Switch>
-                    {!isLoggedin && <Route path='/login' render={props => <Signin {...props} />} exact />}
+                    {!isLoggedin && <Route path='/' render={props => <Signin {...props} />} exact />}
                     {isLoggedin && <Route path='/dashboard/home' render={props => <Dashboard {...props} />} exact />}
-                    {!isLoggedin && <Redirect to='/login' />}
+                    {!isLoggedin && <Redirect to='/' />}
                     {isLoggedin && <Redirect to='/dashboard/home' />}
                 </Switch>
             </Router>
